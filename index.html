@@ -1,0 +1,462 @@
+<title>Юрий Абашев о Болгарии</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Юрий Абашев – 30 лет помогаю русскоговорящим в Болгарии: ВНЖ, гражданство, адресная регистрация, открытие фирмы, переводы, сопровождение в учреждениях.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
+<style>
+/* Макет: «бланк» – левое выравнивание, услуги как поля анкеты с болгарским учреждением,
+   один яркий элемент – красная печать «30 лет в Болгарии» у фото. Цвета и шрифты – из D:\CLAUDE\Бренд.
+   v2: кнопки связи под главной кнопкой и нижняя панель связи на телефоне. */
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --ink: #15211c;
+  --muted: #56645d;
+  --line: #e2e6e0;
+  --green: #00966e;
+  --green-ink: #007455;
+  --green-soft: #e3f3ec;
+  --red: #d62612;
+  --red-soft: #fbe7e3;
+  --flag-white: #ffffff;
+  --font-display: "Unbounded", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Golos Text", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1613; --surface: #17201c; --ink: #edf2ee; --muted: #a3b1aa; --line: #2a3631;
+    --green: #2fb889; --green-ink: #5fd0a6; --green-soft: #173229; --red: #f0614f; --red-soft: #3a1d18;
+    --flag-white: #e9ece9; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1613; --surface: #17201c; --ink: #edf2ee; --muted: #a3b1aa; --line: #2a3631;
+  --green: #2fb889; --green-ink: #5fd0a6; --green-soft: #173229; --red: #f0614f; --red-soft: #3a1d18;
+  --flag-white: #e9ece9; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
+a { color: var(--green-ink); }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 19px; line-height: 1.3; font-weight: 500; }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.flag { display: grid; grid-template-rows: repeat(3, 6px); }
+.flag i:nth-child(1) { background: var(--flag-white); border-top: 1px solid var(--line); }
+.flag i:nth-child(2) { background: var(--green); }
+.flag i:nth-child(3) { background: var(--red); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; font: 600 16px/1 var(--font-body); padding: 17px 26px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; text-decoration: none; }
+.btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .act:focus-visible, .chip:focus-visible, .dock a:focus-visible, nav a:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+.btn-main { background: var(--red); color: #fff; }
+.btn-main:hover { filter: brightness(1.08); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--green); }
+
+/* шапка */
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
+.mono { width: 44px; height: 44px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font: 700 15px var(--font-display); }
+.logo b { font: 700 17px/1.2 var(--font-display); display: block; }
+.logo small { font-size: 14px; color: var(--muted); }
+nav { display: flex; gap: 26px; flex-wrap: wrap; font-weight: 500; }
+nav a { color: var(--ink); text-decoration: none; }
+nav a:hover { color: var(--green-ink); }
+
+/* первый экран */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: center; padding-block: 48px 88px; }
+.hero h1 { font-size: clamp(32px, 4.6vw, 54px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; }
+.hero .lead { font-size: 19px; color: var(--muted); margin-top: 24px; max-width: 32em; }
+.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+.quick { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 24px; font-size: 15px; color: var(--muted); }
+.chip { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font: 500 15px var(--font-body); text-decoration: none; }
+.chip:hover { border-color: var(--green); color: var(--green-ink); }
+.where { margin-top: 28px; font-size: 15px; color: var(--muted); }
+.quick + .where { margin-top: 20px; }
+.where b { color: var(--ink); font-weight: 600; }
+.photo { position: relative; max-width: 420px; justify-self: end; width: 100%; }
+.portrait { aspect-ratio: 4 / 5; max-width: 100%; border-radius: 200px 200px 24px 24px; background: var(--green-soft); display: grid; place-items: center; }
+.portrait { position: relative; overflow: hidden; }
+.portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.stamp { position: absolute; left: -48px; bottom: 56px; width: 150px; height: 150px; color: var(--red); transform: rotate(-14deg); animation: press .7s cubic-bezier(.2,.9,.3,1.2) .3s both; }
+.stamp svg { width: 100%; height: 100%; display: block; }
+@keyframes press { from { transform: rotate(-14deg) scale(1.25); } to { transform: rotate(-14deg) scale(1); } }
+
+/* услуги – как поля бланка */
+section { padding-block: 80px; }
+.intro { display: grid; gap: 14px; max-width: 36em; margin-bottom: 44px; }
+.intro p { color: var(--muted); }
+.services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 64px; border-top: 2px solid var(--ink); }
+.svc { display: grid; gap: 10px; padding-block: 28px; border-bottom: 1px solid var(--line); align-content: start; }
+.svc p { color: var(--muted); font-size: 16px; max-width: 34em; }
+.field { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; font-size: 14px; margin-top: 4px; }
+.field small { color: var(--muted); }
+.field span { color: var(--green-ink); font-weight: 500; border-bottom: 1px dashed var(--green); }
+
+/* обо мне и форум */
+.about { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 56px; align-items: start; }
+.about-text { display: grid; gap: 16px; max-width: 36em; }
+.about-text p { color: var(--muted); }
+.about-text .first { font-size: 20px; line-height: 1.5; color: var(--ink); }
+.facts { margin: 0; border-top: 2px solid var(--ink); }
+.facts div { display: grid; gap: 2px; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.facts dt { font-size: 14px; color: var(--muted); }
+.facts dd { margin: 0; font-weight: 600; }
+.proof { margin-top: 72px; }
+.proof .intro { margin-bottom: 32px; }
+.cases { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.case { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 4px solid var(--green); }
+.case time { font: 700 28px/1 var(--font-display); color: var(--green-ink); }
+.case small { font-size: 14px; color: var(--muted); }
+.case p { color: var(--muted); font-size: 16px; }
+
+/* как я работаю */
+.band { background: var(--surface); border-block: 1px solid var(--line); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; counter-reset: s; position: relative; }
+.steps::before { content: ""; position: absolute; top: 22px; left: 22px; right: 22px; height: 2px; background: var(--green-soft); }
+.steps li { position: relative; display: grid; gap: 8px; align-content: start; }
+.steps li::before { counter-increment: s; content: counter(s); width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); border: 2px solid var(--green); color: var(--green-ink); font: 700 18px var(--font-display); margin-bottom: 8px; }
+.steps p { color: var(--muted); font-size: 16px; }
+.terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; margin-top: 64px; }
+.term { display: grid; gap: 8px; padding-top: 18px; border-top: 4px solid var(--green); }
+.term.price { border-top-color: var(--red); }
+.term p { color: var(--muted); max-width: 30em; }
+
+/* запись */
+.book { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; align-items: start; }
+.contacts { list-style: none; margin: 28px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.contacts li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.contacts li div { min-width: 0; }
+.contacts small { display: block; font-size: 13px; color: var(--muted); }
+.contacts span { font-weight: 600; overflow-wrap: anywhere; }
+.acts { display: flex; gap: 8px; flex: none; }
+.act { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 14px; font: 500 14px var(--font-body); color: var(--green-ink); background: var(--green-soft); border: 0; border-radius: 8px; cursor: pointer; text-decoration: none; }
+.act.sub { background: transparent; color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); }
+form { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 32px; display: grid; gap: 18px; }
+form h3 { font-size: 22px; }
+.row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+label { display: grid; gap: 6px; font-size: 14px; font-weight: 500; }
+input, select, textarea { font: 16px var(--font-body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; width: 100%; }
+textarea { min-height: 120px; resize: vertical; }
+.err { color: var(--red); font-size: 14px; min-height: 1em; }
+.result { border-top: 1px solid var(--line); padding-top: 18px; display: grid; gap: 12px; }
+.result p { font-size: 15px; color: var(--muted); }
+.result pre { white-space: pre-wrap; font: 15px/1.5 var(--font-body); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin: 0; }
+.send { display: flex; gap: 10px; flex-wrap: wrap; }
+.send .btn { font-size: 15px; padding: 12px 18px; }
+
+footer { padding-block: 28px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* нижняя панель связи: только на телефоне */
+.dock { display: none; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .book, .about { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .cases { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .photo { justify-self: start; max-width: 340px; margin-left: 48px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps::before { display: none; }
+}
+@media (max-width: 600px) {
+  body { font-size: 16px; padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+  nav { display: none; }
+  .hero h1 { font-size: clamp(22px, 7.2vw, 32px); }
+  section { padding-block: 56px; }
+  .services, .steps, .terms, .row2 { grid-template-columns: minmax(0, 1fr); }
+  .terms { gap: 32px; }
+  .photo { max-width: 260px; margin-left: 40px; }
+  .stamp { width: 116px; height: 116px; left: -40px; bottom: 36px; }
+  form { padding: 22px; }
+  .quick { display: none; }
+  .act { min-height: 44px; }
+  .act.sub { display: none; }
+  .dock { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: 10px max(16px, env(safe-area-inset-right, 0px)) max(10px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: var(--surface); border-top: 1px solid var(--line); transition: transform .25s ease; }
+  .dock.away { transform: translateY(110%); }
+  .dock a { display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 12px; background: var(--green-soft); color: var(--green-ink); font: 600 15px/1 var(--font-body); text-decoration: none; }
+  .dock a.main { background: var(--green-ink); color: var(--surface); }
+}
+@media (prefers-reduced-motion: reduce) { .stamp { animation: none; } .dock { transition: none; } }
+</style>
+
+<div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="mono" aria-hidden="true">ЮА</span><span><b>Юрий Абашев</b><small>о Болгарии по-русски</small></span></a>
+    <nav aria-label="Разделы">
+      <a href="#services">Услуги</a>
+      <a href="#about">Обо мне</a>
+      <a href="#how">Как я работаю</a>
+      <a href="#book">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Помогаю русскоговорящим жить, работать и вести дела в Болгарии</h1>
+        <p class="lead">Вид на жительство, гражданство, адресная регистрация, своя фирма. Объясню порядок, подготовлю документы и пойду с вами в учреждение. К каждому человеку подхожу индивидуально.</p>
+        <div class="actions">
+          <a class="btn btn-main" href="#book">Записаться на консультацию</a>
+          <a class="btn btn-ghost" href="#services">Посмотреть услуги</a>
+        </div>
+        <div class="quick" id="quick"><span>Или напишите сразу:</span></div>
+        <p class="where">Работаю в <b>Софии</b>, по договорённости выезжаю в другие города Болгарии.</p>
+      </div>
+      <div class="photo">
+        <div class="portrait"><img src="photo.jpg" width="640" height="800" alt="Юрий Абашев"></div>
+        <div class="stamp" role="img" aria-label="30 лет помогаю русскоговорящим в Болгарии">
+          <svg viewBox="0 0 160 160" aria-hidden="true">
+            <defs><path id="ring" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+            <circle cx="80" cy="80" r="76" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="80" cy="80" r="44" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <text fill="currentColor" font-family="Golos Text, Segoe UI, sans-serif" font-size="13" font-weight="600" letter-spacing="1.6"><textPath href="#ring">помогаю русскоговорящим в Болгарии •</textPath></text>
+            <text x="80" y="86" text-anchor="middle" fill="currentColor" font-family="Unbounded, Segoe UI, sans-serif" font-size="34" font-weight="700">30</text>
+            <text x="80" y="106" text-anchor="middle" fill="currentColor" font-family="Golos Text, Segoe UI, sans-serif" font-size="14" font-weight="600">лет</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="intro">
+        <h2>С чем я помогаю</h2>
+        <p>Консультирую по каждому вопросу и, если нужно, доводим дело до необходимого результата. Одновременно сопровожу вас в соответствующие институции, куда мы вместе обратимся.</p>
+      </div>
+      <div class="services">
+        <article class="svc"><h3>Вид на жительство</h3><p>Подберу основание для ВНЖ: пенсия, работа, брак, бизнес. Помогу с первой подачей и продлением.</p><div class="field"><small>Куда обращаемся</small><span lang="bg">Дирекция «Миграция»</span></div></article>
+        <article class="svc"><h3>Гражданство</h3><p>Оценю, есть ли у вас право на гражданство, соберу пакет документов и прослежу за делом.</p><div class="field"><small>Куда обращаемся</small><span lang="bg">Министерство на правосъдието</span></div></article>
+        <article class="svc"><h3>Адресная регистрация</h3><p>Регистрация по постоянному и настоящему адресу и её смена после переезда.</p><div class="field"><small>Куда обращаемся</small><span lang="bg">Община, ЕСГРАОН</span></div></article>
+        <article class="svc"><h3>Открытие фирмы</h3><p>Помогу выбрать форму фирмы, подготовлю документы для регистрации и подскажу, что делать дальше.</p><div class="field"><small>Куда обращаемся</small><span lang="bg">Агенция по вписванията</span></div></article>
+        <article class="svc"><h3>Перевод документов</h3><p>Помогу вам сделать официальный перевод на болгарский язык и легализацию ваших документов через лицензированную фирму к вашему приезду в Болгарию.</p><div class="field"><small>Что нужно</small><span lang="bg">Заверен превод, апостил</span></div></article>
+        <article class="svc"><h3>Сопровождение в учреждениях</h3><p>Пойду с вами в общину, налоговую или полицию и помогу объясниться на болгарском.</p><div class="field"><small>Куда обращаемся</small><span lang="bg">Община, НАП, МВР</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-text">
+          <h2>Обо мне</h2>
+          <p class="first">С 1990 года живу в Болгарии и помогаю русскоговорящим здесь освоиться.</p>
+          <p>За 30 с лишним лет я помог по самым разным вопросам нескольким тысячам человек из почти всех бывших советских республик. Сейчас они живут на всех континентах.</p>
+          <p>Чаще всего просят помочь с переездом в Болгарию, получением болгарского гражданства, покупкой или продажей недвижимости. Но тем гораздо больше.</p>
+          <p>В августе 2011 года на конкурсе «Русская Звезда» в Бургасе меня наградили Специальной премией «Общественное признание» и знаком «Общественное признание». Награду дали за помощь россиянам в Болгарии и за интернет-проект, форум «О Болгарии по-русски».</p>
+        </div>
+        <dl class="facts">
+          <div><dt>В Болгарии</dt><dd>с 1990 года</dd></div>
+          <div><dt>Форум «О Болгарии по-русски»</dt><dd>с 2003 года, более 29&nbsp;000 зарегистрированных пользователей и 420&nbsp;000 сообщений</dd></div>
+          <div><dt>Награда</dt><dd>Конкурс «Русская Звезда», Бургас, август 2011</dd></div>
+          <div><dt>Чаще всего помогаю с вопросами</dt><dd>переезда, гражданства, недвижимости</dd></div>
+        </dl>
+      </div>
+
+      <div class="proof">
+        <div class="intro">
+          <h2>Что пишут на форуме</h2>
+          <p>Несколько благодарностей из открытых тем <a href="http://forum.aboutbulgaria.biz" target="_blank" rel="noopener">форума «О Болгарии по-русски»</a>. Пересказ без имён авторов.</p>
+        </div>
+        <ul class="cases">
+          <li class="case"><time datetime="2005">2005</time><small>Гражданство</small><p>Участник форума выяснял, как проходит собеседование по гражданству. Юрий нашёл время встретиться с ним лично и помочь. В открытой теме человек поблагодарил его.</p></li>
+          <li class="case"><time datetime="2010">2010</time><small>Недвижимость</small><p>В теме о ценах на недвижимость набралось 872 ответа и около 171 тысячи просмотров. Участница поблагодарила Юрия за добрые советы.</p></li>
+          <li class="case"><time datetime="2013">2013</time><small>Учёба детей</small><p>Тема об оформлении российского ребёнка в болгарскую школу набрала больше тысячи ответов и около 287 тысяч просмотров. Одна из мам от имени других родителей поблагодарила Юрия.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="band">
+    <div class="wrap">
+      <div class="intro">
+        <h2>Как я работаю</h2>
+        <p>От первого вопроса до готовых документов – четыре шага.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Вы задаёте вопрос</h3><p>Пишете через форму ниже или в мессенджер.</p></li>
+        <li><h3>Консультация</h3><p>Разбираем вашу ситуацию и все возможные варианты.</p></li>
+        <li><h3>План и стоимость</h3><p>Называю шаги, сроки и цену до начала работы.</p></li>
+        <li><h3>Сопровождение</h3><p>Готовлю документы и иду с вами до результата.</p></li>
+      </ol>
+      <div class="terms">
+        <div class="term price"><h3>Сколько это стоит</h3><p>Стоимость зависит от вашего случая. Я называю её после первой консультации, когда понятен объём работы.</p></div>
+        <div class="term"><h3>Где я работаю</h3><p>В основном в Софии. По договорённости выезжаю в другие города Болгарии.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book">
+      <div>
+        <div class="intro" style="margin-bottom:0">
+          <h2>Задайте вопрос или запишитесь на консультацию</h2>
+          <p>Напишите мне удобным способом или заполните форму – сайт подготовит готовое сообщение.</p>
+        </div>
+        <ul class="contacts" id="contacts"></ul>
+      </div>
+
+      <form id="form" novalidate>
+        <h3>Запись на консультацию</h3>
+        <div class="row2">
+          <label for="f-name">Как к вам обращаться<input id="f-name" autocomplete="name" placeholder="Анна"></label>
+          <label for="f-contact">Телефон или ник в мессенджере<input id="f-contact" autocomplete="tel" placeholder="+7 900 123-45-67"></label>
+        </div>
+        <label for="f-topic">Тема
+          <select id="f-topic">
+            <option>Вид на жительство</option>
+            <option>Гражданство</option>
+            <option>Адресная регистрация</option>
+            <option>Открытие фирмы</option>
+            <option>Перевод документов</option>
+            <option>Сопровождение в учреждениях</option>
+            <option>Покупка и продажа недвижимости в Болгарии</option>
+            <option>Другой вопрос</option>
+          </select>
+        </label>
+        <label for="f-msg">Ваш вопрос<textarea id="f-msg" placeholder="Я пенсионер из Казахстана, хочу переехать в Софию. С чего начать?"></textarea></label>
+        <div class="err" id="err" role="alert"></div>
+        <button class="btn btn-main" type="submit">Подготовить сообщение</button>
+        <div class="result" id="result" hidden>
+          <p>Сообщение готово. Скопируйте его и отправьте мне в мессенджер или на почту.</p>
+          <pre id="out"></pre>
+          <div class="send" id="send"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© <span id="year">2026</span> Юрий Абашев, о Болгарии по-русски</span><span>София, Болгария</span></div>
+</footer>
+<div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<div class="dock" id="dock" role="group" aria-label="Быстрая связь"></div>
+
+<script>
+// Контакты: заполните значения, пустые показываются как «добавить».
+const CONTACTS = [
+  { key: "phone",    label: "Телефон",  value: "+359 897 919 269" },
+  { key: "viber",    label: "Viber",    value: "+359 897 919 269" },
+  { key: "telegram", label: "Telegram", value: "+359 897 919 269" },
+  { key: "whatsapp", label: "WhatsApp", value: "+359 897 919 269" },
+  { key: "max",      label: "MAX",      value: "+7 915 166-21-28" },
+  { key: "email",    label: "E-mail",   value: "yurij.abashev@gmail.com" },
+  { key: "facebook", label: "Facebook", value: "https://www.facebook.com/yurijabashev/" },
+  { key: "facebook", label: "Facebook, второй профиль", value: "https://www.facebook.com/profile.php?id=100011438798474" },
+];
+const digits = s => s.replace(/\D/g, "");
+const links = {
+  phone:    v => "tel:+" + digits(v),
+  viber:    v => "viber://chat?number=%2B" + digits(v),
+  telegram: v => v.startsWith("+") ? "https://t.me/+" + digits(v) : "https://t.me/" + v.replace(/^@/, ""),
+  whatsapp: v => "https://wa.me/" + digits(v),
+  email:    v => "mailto:" + v,
+  facebook: v => v.startsWith("http") ? v : "https://facebook.com/" + v,
+};
+const openLabel = { phone: "Позвонить", email: "Написать" };
+
+// Ссылка на контакт. Сайты открываем в новой вкладке, tel/mailto/viber – как есть.
+function linkTo(key, value, text, cls) {
+  const href = links[key](value);
+  const a = document.createElement("a");
+  a.className = cls; a.href = href; a.textContent = text;
+  if (href.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
+  return a;
+}
+const firstFilled = key => CONTACTS.find(c => c.key === key && c.value.trim() !== "");
+
+function copyText(text, btn) {
+  const done = () => { const old = btn.textContent; btn.textContent = "Скопировано"; setTimeout(() => btn.textContent = old, 1500); };
+  try { navigator.clipboard.writeText(text).then(done, () => selectFallback(btn)); } catch (e) { selectFallback(btn); }
+}
+function selectFallback(btn) {
+  const target = btn.closest("li, .result")?.querySelector("span, pre");
+  if (!target) return;
+  const r = document.createRange(); r.selectNodeContents(target);
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  btn.textContent = "Нажмите Ctrl+C";
+}
+
+// Список контактов: основное действие и «Копировать»
+const box = document.getElementById("contacts");
+CONTACTS.forEach(c => {
+  const row = document.createElement("li");
+  const filled = c.value.trim() !== "";
+  row.innerHTML = `<div><small>${c.label}</small><span></span></div>`;
+  const span = row.querySelector("span");
+  if (!filled) { span.textContent = "добавить"; span.style.color = "var(--red)"; box.appendChild(row); return; }
+  span.textContent = c.key === "facebook" ? c.value.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "") : c.value;
+  const acts = document.createElement("div");
+  acts.className = "acts";
+  const main = links[c.key] ? linkTo(c.key, c.value, openLabel[c.key] || "Открыть", "act") : null;
+  if (main) acts.appendChild(main);
+  if (c.key !== "facebook") {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = main ? "act sub" : "act"; b.textContent = "Копировать";
+    b.addEventListener("click", () => copyText(c.value, b));
+    acts.appendChild(b);
+  }
+  row.appendChild(acts);
+  box.appendChild(row);
+});
+
+// Кнопки связи под главной кнопкой (компьютер и планшет)
+const quick = document.getElementById("quick");
+[["whatsapp", "WhatsApp"], ["telegram", "Telegram"], ["viber", "Viber"], ["phone", "Позвонить"]].forEach(([key, text]) => {
+  const c = firstFilled(key);
+  if (c) quick.appendChild(linkTo(key, c.value, text, "chip"));
+});
+quick.hidden = !quick.querySelector(".chip");
+
+// Нижняя панель связи (телефон): прячется, когда на экране блок «Контакты»
+const dock = document.getElementById("dock");
+[["whatsapp", "WhatsApp", "main"], ["telegram", "Telegram", ""], ["phone", "Позвонить", ""]].forEach(([key, text, cls]) => {
+  const c = firstFilled(key);
+  if (c) dock.appendChild(linkTo(key, c.value, text, cls));
+});
+if (!dock.children.length) dock.hidden = true;
+else if ("IntersectionObserver" in window) {
+  new IntersectionObserver(([e]) => { dock.classList.toggle("away", e.isIntersecting); dock.inert = e.isIntersecting; }, { rootMargin: "0px 0px -40% 0px" })
+    .observe(document.getElementById("book"));
+}
+
+const form = document.getElementById("form");
+const err = document.getElementById("err");
+["f-name", "f-contact", "f-msg"].forEach(id => document.getElementById(id).addEventListener("input", () => err.textContent = ""));
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const name = document.getElementById("f-name").value.trim();
+  const contact = document.getElementById("f-contact").value.trim();
+  const topic = document.getElementById("f-topic").value;
+  const msg = document.getElementById("f-msg").value.trim();
+  if (!name) { err.textContent = "Напишите, как к вам обращаться."; return; }
+  if (!contact) { err.textContent = "Оставьте телефон или ник, чтобы я мог ответить."; return; }
+  if (!msg) { err.textContent = "Коротко опишите ваш вопрос."; return; }
+  const text = `Здравствуйте, Юрий! Меня зовут ${name}.\nТема: ${topic}.\n${msg}\nМой контакт: ${contact}`;
+  document.getElementById("out").textContent = text;
+  const send = document.getElementById("send");
+  send.innerHTML = "";
+  const copy = document.createElement("button");
+  copy.type = "button"; copy.className = "btn btn-ghost"; copy.textContent = "Скопировать текст";
+  copy.addEventListener("click", () => copyText(text, copy));
+  send.appendChild(copy);
+  CONTACTS.filter(c => (c.key === "whatsapp" || c.key === "telegram") && c.value.trim()).forEach(c => {
+    const a = document.createElement("a");
+    a.className = "btn btn-ghost"; a.target = "_blank"; a.rel = "noopener";
+    a.href = c.key === "whatsapp" ? links.whatsapp(c.value) + "?text=" + encodeURIComponent(text) : links.telegram(c.value);
+    a.textContent = "Открыть " + c.label;
+    send.appendChild(a);
+  });
+  document.getElementById("result").hidden = false;
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
