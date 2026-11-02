@@ -1,10 +1,13 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-BXYFKA1uVkwW76yWoVL68urYQ6PzeskFXC+C6Xn6Teo='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
 <title>Юрий Абашев о Болгарии</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Юрий Абашев – 30 лет помогаю русскоговорящим в Болгарии: ВНЖ, гражданство, адресная регистрация, открытие фирмы, переводы, сопровождение в учреждениях.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
+<link rel="stylesheet" href="fonts.css">
 <style>
 /* Макет: «бланк» – левое выравнивание, услуги как поля анкеты с болгарским учреждением,
    один яркий элемент – красная печать «30 лет в Болгарии» у фото. Цвета и шрифты – из D:\CLAUDE\Бренд.
@@ -182,6 +185,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 }
 @media (prefers-reduced-motion: reduce) { .stamp { animation: none; } .dock { transition: none; } }
 </style>
+</head>
+<body>
 
 <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
 <header>
@@ -460,3 +465,5 @@ form.addEventListener("submit", e => {
 });
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+</body>
+</html>
