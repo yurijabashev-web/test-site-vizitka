@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-BXYFKA1uVkwW76yWoVL68urYQ6PzeskFXC+C6Xn6Teo='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-qnyE/oTIZwTs1ZEF7ne5K1jeoA8TvziW1isKiwiSa3A='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Юрий Абашев о Болгарии</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -178,7 +178,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .quick { display: none; }
   .act { min-height: 44px; }
   .act.sub { display: none; }
-  .dock { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: 10px max(16px, env(safe-area-inset-right, 0px)) max(10px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: var(--surface); border-top: 1px solid var(--line); transition: transform .25s ease; }
+  .dock { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: 10px max(16px, env(safe-area-inset-right, 0px)) max(10px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: var(--surface); border-top: 1px solid var(--line); transition: transform .25s ease; }
   .dock.away { transform: translateY(110%); }
   .dock a { display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 12px; background: var(--green-soft); color: var(--green-ink); font: 600 15px/1 var(--font-body); text-decoration: none; }
   .dock a.main { background: var(--green-ink); color: var(--surface); }
@@ -273,7 +273,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <ul class="cases">
           <li class="case"><time datetime="2005">2005</time><small>Гражданство</small><p>Участник форума выяснял, как проходит собеседование по гражданству. Юрий нашёл время встретиться с ним лично и помочь. В открытой теме человек поблагодарил его.</p></li>
           <li class="case"><time datetime="2010">2010</time><small>Недвижимость</small><p>В теме о ценах на недвижимость набралось 872 ответа и около 171 тысячи просмотров. Участница поблагодарила Юрия за добрые советы.</p></li>
-          <li class="case"><time datetime="2013">2013</time><small>Учёба детей</small><p>Тема об оформлении российского ребёнка в болгарскую школу набрала больше тысячи ответов и около 287 тысяч просмотров. Одна из мам от имени других родителей поблагодарила Юрия.</p></li>
+          <li class="case"><time datetime="2013">2013</time><small>Учёба детей</small><p>Тема об оформлении российского ребёнка в болгарскую школу набрала больше тысячи ответов и около 287 тысяч просмотров. Добились отмены платного обучения иностранцами в Болгарии в начальном и среднем образовании с 2012/2013 учебного года в государственных школах. Одна из мам от имени других родителей поблагодарила Юрия.</p></li>
         </ul>
       </div>
     </div>
@@ -292,7 +292,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <li><h3>Сопровождение</h3><p>Готовлю документы и иду с вами до результата.</p></li>
       </ol>
       <div class="terms">
-        <div class="term price"><h3>Сколько это стоит</h3><p>Стоимость зависит от вашего случая. Я называю её после первой консультации, когда понятен объём работы.</p></div>
+        <div class="term price"><h3>Сколько это стоит</h3><p>Первая консультация бесплатная для выяснения темы и необходимой помощи, а дальнейшая работа оплачивается по договорённости, если соглашусь и пойму, что действительно смогу вам помочь.</p></div>
         <div class="term"><h3>Где я работаю</h3><p>В основном в Софии. По договорённости выезжаю в другие города Болгарии.</p></div>
       </div>
     </div>
@@ -330,9 +330,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <div class="err" id="err" role="alert"></div>
         <button class="btn btn-main" type="submit">Подготовить сообщение</button>
         <div class="result" id="result" hidden>
-          <p>Сообщение готово. Скопируйте его и отправьте мне в мессенджер или на почту.</p>
+          <p>Сообщение готово. Отправьте его мне в WhatsApp или MAX.</p>
           <pre id="out"></pre>
           <div class="send" id="send"></div>
+          <p id="max-note"></p>
         </div>
       </form>
     </div>
@@ -350,26 +351,21 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 // Контакты: заполните значения, пустые показываются как «добавить».
 const CONTACTS = [
   { key: "phone",    label: "Телефон",  value: "+359 897 919 269" },
-  { key: "viber",    label: "Viber",    value: "+359 897 919 269" },
-  { key: "telegram", label: "Telegram", value: "+359 897 919 269" },
   { key: "whatsapp", label: "WhatsApp", value: "+359 897 919 269" },
   { key: "max",      label: "MAX",      value: "+7 915 166-21-28" },
   { key: "email",    label: "E-mail",   value: "yurij.abashev@gmail.com" },
   { key: "facebook", label: "Facebook", value: "https://www.facebook.com/yurijabashev/" },
-  { key: "facebook", label: "Facebook, второй профиль", value: "https://www.facebook.com/profile.php?id=100011438798474" },
 ];
 const digits = s => s.replace(/\D/g, "");
 const links = {
   phone:    v => "tel:+" + digits(v),
-  viber:    v => "viber://chat?number=%2B" + digits(v),
-  telegram: v => v.startsWith("+") ? "https://t.me/+" + digits(v) : "https://t.me/" + v.replace(/^@/, ""),
   whatsapp: v => "https://wa.me/" + digits(v),
   email:    v => "mailto:" + v,
   facebook: v => v.startsWith("http") ? v : "https://facebook.com/" + v,
 };
 const openLabel = { phone: "Позвонить", email: "Написать" };
 
-// Ссылка на контакт. Сайты открываем в новой вкладке, tel/mailto/viber – как есть.
+// Ссылка на контакт. Сайты открываем в новой вкладке, tel/mailto – как есть.
 function linkTo(key, value, text, cls) {
   const href = links[key](value);
   const a = document.createElement("a");
@@ -416,7 +412,7 @@ CONTACTS.forEach(c => {
 
 // Кнопки связи под главной кнопкой (компьютер и планшет)
 const quick = document.getElementById("quick");
-[["whatsapp", "WhatsApp"], ["telegram", "Telegram"], ["viber", "Viber"], ["phone", "Позвонить"]].forEach(([key, text]) => {
+[["whatsapp", "WhatsApp"], ["phone", "Позвонить"]].forEach(([key, text]) => {
   const c = firstFilled(key);
   if (c) quick.appendChild(linkTo(key, c.value, text, "chip"));
 });
@@ -424,7 +420,7 @@ quick.hidden = !quick.querySelector(".chip");
 
 // Нижняя панель связи (телефон): прячется, когда на экране блок «Контакты»
 const dock = document.getElementById("dock");
-[["whatsapp", "WhatsApp", "main"], ["telegram", "Telegram", ""], ["phone", "Позвонить", ""]].forEach(([key, text, cls]) => {
+[["whatsapp", "WhatsApp", "main"], ["phone", "Позвонить", ""]].forEach(([key, text, cls]) => {
   const c = firstFilled(key);
   if (c) dock.appendChild(linkTo(key, c.value, text, cls));
 });
@@ -454,13 +450,18 @@ form.addEventListener("submit", e => {
   copy.type = "button"; copy.className = "btn btn-ghost"; copy.textContent = "Скопировать текст";
   copy.addEventListener("click", () => copyText(text, copy));
   send.appendChild(copy);
-  CONTACTS.filter(c => (c.key === "whatsapp" || c.key === "telegram") && c.value.trim()).forEach(c => {
+  const wa = firstFilled("whatsapp");
+  if (wa) {
     const a = document.createElement("a");
     a.className = "btn btn-ghost"; a.target = "_blank"; a.rel = "noopener";
-    a.href = c.key === "whatsapp" ? links.whatsapp(c.value) + "?text=" + encodeURIComponent(text) : links.telegram(c.value);
-    a.textContent = "Открыть " + c.label;
+    a.href = links.whatsapp(wa.value) + "?text=" + encodeURIComponent(text);
+    a.textContent = "Открыть WhatsApp";
     send.appendChild(a);
-  });
+  }
+  const tel = firstFilled("phone");
+  if (tel) send.appendChild(linkTo("phone", tel.value, "Позвонить", "btn btn-ghost"));
+  const max = firstFilled("max");
+  document.getElementById("max-note").textContent = max ? "В MAX: вставьте скопированный текст в чат с номером " + max.value + "." : "";
   document.getElementById("result").hidden = false;
 });
 document.getElementById("year").textContent = new Date().getFullYear();
