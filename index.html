@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-qnyE/oTIZwTs1ZEF7ne5K1jeoA8TvziW1isKiwiSa3A='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-H09maNQ9oT+blF5O/OAM8hMadkrh2iUEJs3uSHWQMwg='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Юрий Абашев о Болгарии</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -360,6 +360,7 @@ const digits = s => s.replace(/\D/g, "");
 const links = {
   phone:    v => "tel:+" + digits(v),
   whatsapp: v => "https://wa.me/" + digits(v),
+  max:      () => "https://max.ru/u/f9LHodD0cOI8FSG7klrri4yJRvFZHeeqM47p3FaASE7RBDpFWcF0zpVnbbE",
   email:    v => "mailto:" + v,
   facebook: v => v.startsWith("http") ? v : "https://facebook.com/" + v,
 };
@@ -412,7 +413,7 @@ CONTACTS.forEach(c => {
 
 // Кнопки связи под главной кнопкой (компьютер и планшет)
 const quick = document.getElementById("quick");
-[["whatsapp", "WhatsApp"], ["phone", "Позвонить"]].forEach(([key, text]) => {
+[["whatsapp", "WhatsApp"], ["max", "MAX"], ["phone", "Позвонить"]].forEach(([key, text]) => {
   const c = firstFilled(key);
   if (c) quick.appendChild(linkTo(key, c.value, text, "chip"));
 });
@@ -420,7 +421,7 @@ quick.hidden = !quick.querySelector(".chip");
 
 // Нижняя панель связи (телефон): прячется, когда на экране блок «Контакты»
 const dock = document.getElementById("dock");
-[["whatsapp", "WhatsApp", "main"], ["phone", "Позвонить", ""]].forEach(([key, text, cls]) => {
+[["whatsapp", "WhatsApp", "main"], ["max", "MAX", ""], ["phone", "Позвонить", ""]].forEach(([key, text, cls]) => {
   const c = firstFilled(key);
   if (c) dock.appendChild(linkTo(key, c.value, text, cls));
 });
@@ -458,10 +459,11 @@ form.addEventListener("submit", e => {
     a.textContent = "Открыть WhatsApp";
     send.appendChild(a);
   }
+  const max = firstFilled("max");
+  if (max) send.appendChild(linkTo("max", max.value, "Открыть MAX", "btn btn-ghost"));
   const tel = firstFilled("phone");
   if (tel) send.appendChild(linkTo("phone", tel.value, "Позвонить", "btn btn-ghost"));
-  const max = firstFilled("max");
-  document.getElementById("max-note").textContent = max ? "В MAX: вставьте скопированный текст в чат с номером " + max.value + "." : "";
+  document.getElementById("max-note").textContent = max ? "В MAX текст сам не подставится: нажмите «Скопировать текст», откройте MAX и вставьте его в чат." : "";
   document.getElementById("result").hidden = false;
 });
 document.getElementById("year").textContent = new Date().getFullYear();
